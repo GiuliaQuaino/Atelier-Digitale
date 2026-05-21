@@ -1,14 +1,10 @@
 import "./sidebar.css";
 
-import { useState } from "react";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-  <polyline points="9 22 9 12 15 12 15 22"/>
-</svg>, label: "Dashboard", path: "/dashboard"},
+  { icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/> <polyline points="9 22 9 12 15 12 15 22"/> </svg>, label: "Dashboard", path: "/dashboard"},
   { icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>, label: "Mappa", path: "/mappa" },
   { icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>, label: "Statistiche", path: "/statistiche" },
   { icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="12" x="4" y="4" rx="2"/><path d="M8 16v2"/><path d="M16 16v2"/><path d="M4 12h16"/></svg>, label: "Flotta", path: "/flotta" },
@@ -18,8 +14,11 @@ const navItems = [
 ];
 
 export default function Sidebar() {
-  const [active, setActive] = useState("Dashboard");
   const { utente } = useAuth();
+
+  const itemsVisibili = navItems.filter(item =>
+    utente?.pagine?.includes(item.path.replace("/", ""))
+  );
 
   return (
     <div className="sidebar">
@@ -35,13 +34,11 @@ export default function Sidebar() {
       <hr className="sidebar__divider" />
 
       <nav className="sidebar__nav">
-        {navItems.map(({ icon, label, path }) => (
+        {itemsVisibili.map(({ icon, label, path }) => (
           <NavLink
             key={label}
             to={path}
-            className={`sidebar__nav-item ${active === label ? "sidebar__nav-item--active" : ""}`}
-            onClick={() => setActive(label)}
-          >
+            className={({ isActive }) => `sidebar__nav-item ${isActive ? "sidebar__nav-item--active" : ""}`} >
             <span className="sidebar__nav-icon">{icon}</span>
             <span className="sidebar__nav-label">{label}</span>
           </NavLink>
