@@ -1,0 +1,25 @@
+[
+    { 
+        "username": "mario", 
+        "password": "1234", 
+        "nome": "Mario Rossi", 
+        "ruolo": "Amministratore",
+        "pagine": ["dashboard", "mappa", "statistiche", "flotta", "manutenzione", "segnalazioni", "gestione-utenti"] 
+    },
+    { 
+        "username": "alessandro", 
+        "password": "1234", 
+        "nome": "Alessandro Bianchi", 
+        "ruolo": "Tecnico",
+        "pagine": ["dashboard", "mappa", "flotta", "manutenzione"]
+    },
+    { 
+        "username": "chiara", 
+        "password": "1234", 
+        "nome": "Chiara Galli", 
+        "ruolo": "Supporto",
+        "pagine": ["dashboard", "flotta", "manutenzione"]
+    }
+
+
+]
