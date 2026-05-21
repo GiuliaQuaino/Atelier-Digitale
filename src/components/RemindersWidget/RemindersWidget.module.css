@@ -1,0 +1,90 @@
+.card {
+  max-width: 400px; 
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  font-family: sans-serif;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #1e293b; 
+  margin: 0;
+}
+
+.addButton {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #e2e8f0;
+}
+
+.alertList {
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px;
+}
+
+.alertBox {
+  background-color: #eef6fb;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.iconCircle {
+  background-color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.textContainer {
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px;
+}
+
+.alertText {
+  margin: 0; 
+  font-size: 15px; 
+  color: #334155; 
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.alertDate {
+  font-size: 13px; 
+  color: #94a3b8;
+  font-weight: 500;
+}
