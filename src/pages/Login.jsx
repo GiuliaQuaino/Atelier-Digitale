@@ -5,6 +5,7 @@ import users from '../data/users.json';
 
 const Login = () => {
   const [form, setForm] = useState({ username: '', password: '' });
+  const [errore, setErrore] = useState("");
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -16,17 +17,20 @@ const Login = () => {
       login(user);
       navigate('/dashboard'); 
     } else {
-      alert("Credenziali errate!");
+      setErrore("Credenziali errate!");
     }
   };
 
   return (
+    <div>
+    <h2>Login</h2>
     <form onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <input type="text" placeholder="Username" onChange={e => setForm({...form, username: e.target.value})} />
-      <input type="password" placeholder="Password" onChange={e => setForm({...form, password: e.target.value})} />
+      <input type="text" placeholder="Username"  value ={form.username} onChange={e => setForm({...form, username: e.target.value})} />
+      <input type="password" placeholder="Password" value ={form.password} onChange={e => setForm({...form, password: e.target.value})} />
+     {errore && <p style={{ color: "red" }}>{errore}</p>}
       <button type="submit">Entra</button>
     </form>
+    </div>
   );
 };
 
