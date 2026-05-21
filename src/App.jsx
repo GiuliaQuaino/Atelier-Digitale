@@ -1,12 +1,18 @@
-import './App.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'; 
+import { AuthProvider } from './context/AuthContext';
+import Login from './pages/Login';
 
-function App() {
-
+export default function App() {
   return (
-    <div>
-      Primi commit
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
+
+          <Route path="/login" element={<Login />} />
+          
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
-
-export default App
