@@ -1,3 +1,14 @@
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
+
 const data = [
   { month: "Jan", value: 620 },
   { month: "Feb", value: 950 },
@@ -12,3 +23,4 @@ const data = [
   { month: "Nov", value: 790 },
   { month: "Dec", value: 1000 },
 ];
+
