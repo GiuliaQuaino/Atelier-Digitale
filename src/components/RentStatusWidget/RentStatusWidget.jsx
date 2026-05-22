@@ -1,4 +1,3 @@
-import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import styles from './RentStatusWidget.module.css';
@@ -12,7 +11,7 @@ const data = [
 
 const chartData = [
   { name: 'Disponibili', value: 38.5, color: '#56ab83' },
-  { name: 'In Carica', value: 20.0, color: '#e7eff4' },
+  { name: 'In Carica', value: 24.5, color: '#e7eff4' },
   { name: 'Fuori Servizio', value: 10.0, color: '#fcd3de' },
   { name: 'In Uso', value: 27.0, color: '#f7e9c2' },
 ];
@@ -38,6 +37,7 @@ export default function RentStatusWidget() {
               dataKey="value"
               cornerRadius={10}
               startAngle={120}
+              endAngle={480}
             >
               {chartData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
