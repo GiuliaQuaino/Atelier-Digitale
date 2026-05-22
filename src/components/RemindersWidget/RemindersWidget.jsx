@@ -1,4 +1,3 @@
-import React from 'react';
 import { AlertCircle, Plus } from 'lucide-react';
 import styles from './RemindersWidget.module.css';
 
