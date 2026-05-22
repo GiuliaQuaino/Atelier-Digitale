@@ -4,11 +4,26 @@ import StatusBox from '../components/boxcard/boxcard';
 
 import ChartCart from '../components/chartcard/chartcard';
 
+import RentStatusWidget from '../components/RentStatusWidget/RentStatusWidget'
 
 export default function Statistiche() {
   return (
     <div>
       <StatCard
+        icon="👤"
+        title="Nuovi utenti"
+        value="1.240"
+        percentage="+12%"
+        subtitle="ultimi 30 giorni"
+      />
+ <StatCard
+        icon="👤"
+        title="Bici usate"
+        value="300"
+        percentage="+10.82%"
+        subtitle="ultimi 30 giorni"
+      />
+ <StatCard
         icon="👤"
         title="Nuovi utenti"
         value="1.240"
@@ -40,6 +55,7 @@ export default function Statistiche() {
       />
 
       <ChartCart/>
+      <RentStatusWidget/>
 
     </div>
   );
