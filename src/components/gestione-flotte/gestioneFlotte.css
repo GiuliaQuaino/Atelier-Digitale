@@ -1,0 +1,365 @@
+:root {
+  --header-bg: #d4e8df;
+  --row-hover: #f5faf8;
+  --border: #d1d5db;
+  
+  --badge-green-bg: #E1F5EE;
+  --badge-green-text: #0F6E56;
+  --badge-yellow-bg: #FFF3CD;
+  --badge-yellow-text: #856404;
+  --badge-red-bg: #FCEBEB;
+  --badge-red-text: #A32D2D;
+
+  --pill-attivo-bg: #1a2e1e;
+  --pill-attivo-text: #5DCAA5;
+  --pill-inuso-border: #FDDFA0;
+  --pill-nondisp-border: #F09595;
+}
+
+@keyframes slideDownInline {
+  from { 
+    opacity: 0; 
+    transform: translateY(-5px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.flotte-container { 
+  font-family: 'Montserrat', sans-serif; 
+  padding: 1.5rem 0; 
+}
+
+.flotte-header { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  gap: 12px; 
+  margin-bottom: 1.25rem; 
+}
+
+.flotte-title { 
+  font-size: 22px; 
+  font-weight: 500; 
+  color: #111; 
+  margin: 0; 
+}
+
+.filter-group { 
+  display: flex; 
+  gap: 8px; 
+  flex-wrap: wrap; 
+  align-items: center; 
+}
+
+.filter-label { 
+  font-size: 13px; 
+  color: #9ca3af; 
+}
+
+.table-wrapper { 
+  border: 0.5px solid var(--border); 
+  border-radius: 12px; 
+  overflow: hidden; 
+}
+
+.flotte-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  table-layout: fixed; 
+}
+
+.table-th { 
+  padding: 10px 14px; 
+  text-align: left; 
+  font-size: 12px; 
+  font-weight: 500; 
+  color: #374151; 
+  border-bottom: 0.5px solid var(--border); 
+}
+
+.table-td { 
+  padding: 12px 14px; 
+  border-bottom: 0.5px solid var(--border); 
+  vertical-align: middle; 
+}
+
+.table-td-last { 
+  border-bottom: none; 
+}
+
+.td-id { 
+  font-size: 12px; 
+  font-family: monospace; 
+  color: #374151; 
+}
+
+.td-modello { 
+  font-size: 13px; 
+  color: #111; 
+}
+
+.td-km { 
+  font-size: 13px; 
+  color: #374151; 
+}
+
+.table-row { 
+  background: #fff; 
+  transition: background .12s; 
+}
+
+.table-row:hover { 
+  background: var(--row-hover); 
+}
+
+.table-row-editing { 
+  background: #fafbfc !important; 
+}
+
+.table-empty { 
+  padding: 2rem; 
+  text-align: center; 
+  color: #9ca3af; 
+  font-size: 13px; 
+}
+
+.table-counter { 
+  margin-top: 8px; 
+  font-size: 12px; 
+  color: #9ca3af; 
+}
+
+.edit-row-container {
+  background: #f4f8f6;
+  animation: slideDownInline 0.2s ease-out;
+}
+
+.edit-row-cell {
+  padding: 14px 20px;
+  border-bottom: 0.5px solid var(--border);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.edit-row-grid {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-group-inline {
+  flex: 1;
+  min-width: 110px;
+}
+
+.form-group-inline.range-container {
+  flex: 1.5;
+  min-width: 160px;
+}
+
+.form-label { 
+  display: block; 
+  font-size: 11px; 
+  color: #6b7280; 
+  margin-bottom: 5px; 
+  font-weight: 500; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+}
+
+.form-input {
+  width: 100%; 
+  padding: 6px 10px; 
+  font-size: 13px;
+  border: 0.5px solid var(--border); 
+  border-radius: 6px;
+  background: #fff; 
+  color: #111; 
+  outline: none; 
+  box-sizing: border-box;
+}
+
+.edit-row-actions {
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+  margin-top: auto; 
+  padding-bottom: 1px;
+}
+
+.btn-cancel, 
+.btn-save { 
+  padding: 6px 12px; 
+  border-radius: 6px; 
+  font-size: 12px; 
+  cursor: pointer; 
+  font-weight: 500; 
+}
+
+.btn-cancel { 
+  border: 0.5px solid var(--border); 
+  background: #fff; 
+  color: #374151; 
+}
+
+.btn-save { 
+  border: none; 
+  background: var(--pill-attivo-bg); 
+  color: var(--pill-attivo-text); 
+}
+
+.btn-save:hover { 
+  opacity: 0.85; 
+}
+
+.badge-autonomia { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 3px 10px; 
+  border-radius: 6px; 
+  font-size: 12px; 
+  font-weight: 500; 
+  min-width: 48px; 
+}
+
+.badge-alta { 
+  background: var(--badge-green-bg); 
+  color: var(--badge-green-text); 
+}
+
+.badge-media { 
+  background: var(--badge-yellow-bg); 
+  color: var(--badge-yellow-text); 
+}
+
+.badge-bassa { 
+  background: var(--badge-red-bg); 
+  color: var(--badge-red-text); 
+}
+
+.stato-pill { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 5px; 
+  padding: 4px 10px; 
+  border-radius: 20px; 
+  font-size: 12px; 
+  font-weight: 500; 
+  white-space: nowrap; 
+  border: none; 
+}
+
+.stato-pill-icon { 
+  font-size: 11px; 
+}
+
+.pill-attivo { 
+  background: var(--pill-attivo-bg); 
+  color: var(--pill-attivo-text); 
+}
+
+.pill-inuso { 
+  background: var(--badge-yellow-bg); 
+  color: var(--badge-yellow-text); 
+  border: 0.5px solid var(--pill-inuso-border); 
+}
+
+.pill-nondisp { 
+  background: var(--badge-red-bg); 
+  color: var(--badge-red-text); 
+  border: 0.5px solid var(--pill-nondisp-border); 
+}
+
+.icon-button { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 30px; 
+  height: 30px; 
+  border: 0.5px solid var(--border); 
+  border-radius: 8px; 
+  background: transparent; 
+  color: #6b7280; 
+  cursor: pointer; 
+  transition: all .15s; 
+  font-size: 14px; 
+}
+
+.icon-button:hover { 
+  background: #f3f4f6; 
+  color: #111; 
+}
+
+.icon-button-danger:hover { 
+  border-color: var(--pill-nondisp-border); 
+  background: var(--badge-red-bg); 
+  color: var(--badge-red-text); 
+}
+
+.dropdown-wrapper { 
+  position: relative; 
+}
+
+.dropdown-trigger { 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 6px 12px; 
+  border: 0.5px solid var(--border); 
+  border-radius: 8px; 
+  background: #fff; 
+  color: #6b7280; 
+  font-size: 13px; 
+  cursor: pointer; 
+  font-weight: 400; 
+  transition: all .15s; 
+}
+
+.dropdown-trigger-active { 
+  border-color: var(--badge-green-text); 
+  background: var(--badge-green-bg); 
+  color: var(--badge-green-text); 
+  font-weight: 500; 
+}
+
+.dropdown-arrow { 
+  font-size: 11px; 
+  opacity: 0.7; 
+}
+
+.dropdown-menu { 
+  position: absolute; 
+  top: calc(100% + 6px); 
+  left: 0; 
+  background: #fff; 
+  border: 0.5px solid var(--border); 
+  border-radius: 10px; 
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); 
+  z-index: 50; 
+  min-width: 160px; 
+  overflow: hidden; 
+}
+
+.dropdown-item { 
+  display: block; 
+  width: 100%; 
+  text-align: left; 
+  padding: 8px 14px; 
+  background: transparent; 
+  color: #374151; 
+  font-size: 13px; 
+  border: none; 
+  cursor: pointer; 
+  font-weight: 400; 
+}
+
+.dropdown-item-active { 
+  background: #f0faf5; 
+  color: var(--badge-green-text); 
+  font-weight: 500; 
+}
