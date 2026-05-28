@@ -1,3 +1,7 @@
+import ElencoMezzi from "../components/gestione-flotte/gestioneFlotte";
+
 export default function Flotta() {
-  return <h1>Flotta</h1>;
+  return (
+  <ElencoMezzi/>
+  );
 }
