@@ -1,12 +1,11 @@
 .card {
-  max-width: 400px; 
+  max-width: 500px; 
   width: 100%;
   background-color: #ffffff;
   border-radius: 24px;
   padding: 24px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   font-family: sans-serif;
-  margin: 20px auto;
   box-sizing: border-box;
 }
 
@@ -22,24 +21,6 @@
   font-weight: bold; 
   color: #1e293b; 
   margin: 0;
-}
-
-.addButton {
-  background-color: #f1f5f9;
-  color: #1e293b;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.addButton:hover {
-  background-color: #e2e8f0;
 }
 
 .alertList {
