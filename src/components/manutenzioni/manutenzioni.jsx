@@ -106,6 +106,7 @@ export default function Manutenzione() {
   const [filtroStato, setFiltroStato] = useState('');
   const [filtroTipo, setFiltroTipo] = useState('');
   const [filtroModello, setFiltroModello] = useState('');
+  const [filtroTecnico, setFiltroTecnico] = useState('');
  
   const showToast = (msg) => {
     setToast(msg);
@@ -153,6 +154,7 @@ const handleTaskClose = (task) => {
     if (filtroStato && i.stato !== filtroStato) return false;
     if (filtroTipo && i.tipo !== filtroTipo) return false;
     if (filtroModello && i.modello !== filtroModello) return false;
+    if (filtroTecnico && i.tecnico !== filtroTecnico) return false;
     return true;
   });
  
@@ -160,6 +162,7 @@ const handleTaskClose = (task) => {
     setFiltroStato('');
     setFiltroTipo('');
     setFiltroModello('');
+    setFiltroTecnico('');
   };
  
   return (
@@ -196,8 +199,15 @@ const handleTaskClose = (task) => {
           <option>Bici</option>
           <option>Monopattino</option>
         </select>
+
+        <select className="filtro-select" value={filtroTecnico} onChange={(e) => setFiltroTecnico(e.target.value)}>
+         <option value="">Tutti i tecnici</option>
+         <option>Marco Rossi</option>
+         <option>Laura Bianchi</option>
+         <option>Giovanni Verdi</option>
+        </select>
  
-        {(filtroStato || filtroTipo || filtroModello) && (
+        {(filtroStato || filtroTipo || filtroModello || filtroTecnico) && (
           <button className="filtro-reset" onClick={resetFiltri}>Azzera filtri</button>
         )}
       </div>
