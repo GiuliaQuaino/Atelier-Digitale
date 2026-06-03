@@ -50,3 +50,73 @@
 }
 .gu-badge.attivo      { background: #1a6651; color: #fff; }
 .gu-badge.disattivato { background: #fde8e8; color: #b84040; border: 1px solid #f5c6c6; }
+
+.gu-actions { display: flex; gap: 6px; align-items: center; }
+.gu-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: background 0.12s;
+}
+.gu-icon-btn:hover        { background: #f0f0f0; }
+.gu-icon-btn.danger:hover { background: #fde8e8; }
+ 
+.gu-row-editing { background: #f7faf9; }
+.gu-row-editing td {
+  padding: 10px 16px;
+  border-top: 1px solid #e0ede8;
+  vertical-align: middle;
+}
+ 
+.gu-input {
+  padding: 8px 11px;
+  border: 1px solid #cdd8d3;
+  border-radius: 7px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+  width: 100%;
+}
+.gu-input:focus { border-color: #1a6651; }
+ 
+.gu-select {
+  padding: 8px 11px;
+  border: 1px solid #cdd8d3;
+  border-radius: 7px;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+.gu-stato-select.attivo      { background: #1a6651; color: #fff; }
+.gu-stato-select.disattivato { background: #fde8e8; color: #b84040; border-color: #f5c6c6; }
+ 
+.gu-btn-save {
+  background: #1a6651;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.gu-btn-save:hover { background: #155645; }
+ 
+.gu-btn-cancel {
+  background: #f0f0f0;
+  color: #555;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.gu-btn-cancel:hover { background: #e0e0e0; }
+ 
