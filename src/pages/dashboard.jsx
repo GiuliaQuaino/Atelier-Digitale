@@ -81,7 +81,7 @@ export default function Dashboard() {
                 <MappaMilano onVeicoloClick={() => {}} />
               </div>
 
-              {/* Legenda */}
+              
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '5px' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#8a8fa8', fontWeight: '500' }}>
                   <span style={{ width: '10px', height: '10px', borderRadius: '3px', backgroundColor: '#4CAF50', flexShrink: 0 }} />
