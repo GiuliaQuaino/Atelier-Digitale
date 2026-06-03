@@ -3,25 +3,23 @@ import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import styles from './RentStatusWidget.module.css';
 
 const data = [
-  { name: 'Disponibili', value: 38.5, color: '#56ab83', trend: 'up', percentage: '38,5%' },
-  { name: 'In Uso', value: 27.0, color: '#f7e9c2', trend: 'down', percentage: '27%' },
-  { name: 'In Carica', value: 20.0, color: '#e7eff4', trend: 'up', percentage: '20%' },
-  { name: 'Fuori Servizio', value: 10.0, color: '#fcd3de', trend: 'down', percentage: '10%' },
+  { name: 'Macchina', value: 38.5, color: '#56ab83', trend: 'up', percentage: '38,5%' },
+  { name: 'Bici', value: 27.0, color: '#f7e9c2', trend: 'down', percentage: '27%' },
+ 
 ];
 
 const chartData = [
-  { name: 'Disponibili', value: 38.5, color: '#56ab83' },
-  { name: 'In Carica', value: 24.5, color: '#e7eff4' },
-  { name: 'Fuori Servizio', value: 10.0, color: '#fcd3de' },
-  { name: 'In Uso', value: 27.0, color: '#f7e9c2' },
+  { name: 'Macchina', value: 38.5, color: '#56ab83' },
+  { name: 'Bici', value: 24.5, color: '#f7e9c2' },
+
 ];
 
 export default function RentStatusWidget() {
   return (
     <div className={styles.card}>
       <div className={styles.header}>
-        <h2 className={styles.title}>Stato mezzi</h2>
-        <button className={styles.badge}>Oggi</button>
+        <h2 className={styles.title}>Mezzi più utilizzati</h2>
+        
       </div>
 
       <div className={styles.chartContainer}>

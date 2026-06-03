@@ -12,7 +12,7 @@
   gap: 24px;
 }
 
-/* HEADER */
+
 
 .statistics__chart-header {
   display: flex;
@@ -27,7 +27,7 @@
   color: #111827;
 }
 
-/* SELECT */
+
 
 .statistics__chart-header select {
   border: none;
@@ -51,7 +51,7 @@
   background: #e5e7eb;
 }
 
-/* RECHARTS CUSTOM */
+
 
 .recharts-wrapper {
   font-size: 14px;
@@ -66,7 +66,7 @@
   overflow: hidden;
 }
 
-/* RESPONSIVE */
+
 
 @media screen and (max-width: 768px) {
   .statistics__chart-header {

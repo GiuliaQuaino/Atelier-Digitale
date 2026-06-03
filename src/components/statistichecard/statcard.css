@@ -19,14 +19,13 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* DARK CARD */
+
 
 .statistics__card--dark {
   background: #111827;
   color: #ffffff;
 }
 
-/* TOP */
 
 .statistics__card-top {
   display: flex;
@@ -40,7 +39,7 @@
   cursor: pointer;
 }
 
-/* ICON */
+
 
 .statistics__icon {
   width: 52px;
@@ -57,7 +56,7 @@
   font-size: 24px;
 }
 
-/* TITLE */
+
 
 .statistics__card p {
   font-size: 15px;
@@ -69,7 +68,7 @@
   color: #d1d5db;
 }
 
-/* VALUE ROW */
+
 
 .statistics__card-row {
   display: flex;
@@ -88,7 +87,7 @@
   color: #ffffff;
 }
 
-/* BADGE */
+
 
 .statistics__badge {
   background: #fee2e2;
@@ -107,7 +106,7 @@
   color: #10b981;
 }
 
-/* SUBTITLE */
+
 
 .statistics__card small {
   font-size: 13px;
@@ -118,7 +117,7 @@
   color: #d1d5db;
 }
 
-/* RESPONSIVE */
+
 
 @media screen and (max-width: 768px) {
   .statistics__card-row {

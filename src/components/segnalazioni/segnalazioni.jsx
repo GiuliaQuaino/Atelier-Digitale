@@ -1,7 +1,7 @@
 import { useState, Fragment } from 'react';
 import './segnalazioni.css';
 
-//dati harcoded
+
 const segnalazioniData = [
   {
     id: 1,

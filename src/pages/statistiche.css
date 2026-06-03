@@ -1,0 +1,63 @@
+.statistiche-page {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f4f5f9;
+  min-height: 100vh;
+}
+
+.statistiche-title {
+font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 24px;
+    letter-spacing: -0.5px;
+}
+
+/* 3 colonne uguali — BoxCard in cima */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 2 colonne uguali — Guasti e Flotta */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Grafico largo + RentStatus più stretto */
+.grid-chart {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-chart {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .statistiche-page {
+    padding: 16px;
+  }
+  .grid-3,
+  .grid-2,
+  .grid-chart {
+    grid-template-columns: 1fr;
+  }
+}
+
+._card_1nbmw_1{
+    margin: 0px !important;
+}
