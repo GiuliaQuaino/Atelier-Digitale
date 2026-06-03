@@ -1,3 +1,5 @@
-export default function Segnalazioni() {
-  return <h1>Segnalazioni</h1>;
+import Segnalazioni from '../components/segnalazioni/segnalazioni';
+
+export default function SegnalazioniPage() {
+  return <Segnalazioni />;
 }
