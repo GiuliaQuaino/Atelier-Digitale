@@ -1,3 +1,4 @@
+import { useAuth } from '../context/AuthContext';
 import RentStatusWidget from "../components/RentStatusWidget/RentStatusWidget";
 import RemindersWidget from "../components/RemindersWidget/RemindersWidget";
 import './pages.css';
@@ -10,27 +11,39 @@ const dataMag = [
 ];
 
 export default function Dashboard() {
+
+  const { utente } = useAuth();
+
+  const isAdmin = utente?.ruolo === "Amministratore";
+  const isTecnico = utente?.ruolo === "Tecnico";
+  const isSupporto = utente?.ruolo === "Supporto";
+
   return <div>
     <h1 style={{ marginTop: "24px" }}>Dashboard</h1>
     <div className="dashboard-content">
     <div  className="dashboard-container">
       <div className="widgets">
-        <RentStatusWidget />
+        {(isAdmin || isSupporto) && (
+        <RentStatusWidget />)}
+
+         
         <RemindersWidget /> 
         </div>      
       <div>
+        {isAdmin && (
       <NoleggiChart
       title="Noleggi"
       datasets={{
         "2026": [400, 500, 300, 700, 650, 800, 750, 900, 850, 700, 600, 950],
       }}
       activeMonth={2}
-      maxY={1000}/>
+      maxY={1000}/> )}
       </div>
     </div>
 
     <div style={{ flex: 1 }} className="dashboard-container2">
       <div style={{ width: "100%" }}>
+          {isAdmin && (
       <CO2Card
               title="CO2 Risparmiata"
               value="412k"
@@ -38,7 +51,7 @@ export default function Dashboard() {
               period="Gen - Apr, 2026"
               data={dataMag}
               positive
-            />
+            />)}
             </div>
     </div>
  </div>
