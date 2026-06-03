@@ -4,7 +4,7 @@ import './pages.css';
 import NoleggiChart from "../components/component-grafico-noleggio/widgetNoleggio";
 import CO2Card from "../components/CO2-card/cardCO2";
 
-const dataApr = [
+const dataMag = [
   { v: 310 }, { v: 320 }, { v: 308 }, { v: 330 },
   { v: 345 }, { v: 360 }, { v: 370 }, { v: 395 }, { v: 412 },
 ];
@@ -20,7 +20,7 @@ export default function Dashboard() {
         value="412k"
         change="+2.97%"
         period="Gen - Apr, 2026"
-        data={dataApr}
+        data={dataMag}
         positive
       />
   </div>
