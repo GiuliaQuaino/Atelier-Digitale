@@ -45,7 +45,7 @@ function FilterDropdown({ label, options, value, onChange }) {
   );
 }
 
-function EditRow({ mezzo, onClose }) {
+function EditRow({ mezzo, onClose, onSave }) {
   const [form, setForm] = useState({ ...mezzo });
 
   useEffect(() => {
@@ -99,7 +99,7 @@ function EditRow({ mezzo, onClose }) {
 
           <div className="edit-row-actions">
             <button onClick={onClose} className="btn-cancel btn-sm">Annulla</button>
-            <button onClick={onClose} className="btn-save btn-sm">Salva</button>
+            <button onClick={() => {onSave(form); onClose();}}className="btn-save btn-sm">Salva</button>
           </div>
         </div>
       </td>
@@ -107,7 +107,7 @@ function EditRow({ mezzo, onClose }) {
   );
 }
 
-function TableRow({ mezzo, isLast, isEditing, onEditClick, onCloseEdit, onDelete }) {
+function TableRow({ mezzo, isLast, isEditing, onEditClick, onCloseEdit, onDelete, onSave }) {
   const cellClass = `table-td ${isLast && !isEditing ? "table-td-last" : ""}`;
 
   return (
@@ -142,7 +142,7 @@ function TableRow({ mezzo, isLast, isEditing, onEditClick, onCloseEdit, onDelete
       </tr>
 
       {isEditing && (
-        <EditRow mezzo={mezzo} onClose={onCloseEdit} />
+        <EditRow mezzo={mezzo} onClose={onCloseEdit} onSave={onSave}/>
       )}
     </>
   );
@@ -175,6 +175,10 @@ export default function ElencoMezzi({
 
   const handleDelete = (mezzo) => {
   setData((prev) => prev.filter((m) => m.id !== mezzo.id || m !== mezzo));
+};
+
+  const handleSave = (updated) => {
+  setData((prev) => prev.map((m) => m.id === updated.id ? updated : m));
 };
 
   return (
@@ -218,6 +222,7 @@ export default function ElencoMezzi({
                   onEditClick={(m) => setEditingMezzoId(m.id)}
                   onCloseEdit={() => setEditingMezzoId(null)}
                   onDelete={handleDelete}
+                  onSave={handleSave}
                 />
               ))
             )}

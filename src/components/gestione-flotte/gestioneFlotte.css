@@ -246,18 +246,18 @@
 }
 
 .badge-alta { 
-  background: var(--badge-green-bg); 
-  color: var(--badge-green-text); 
+  background: var(--badge-green-bg) !important; 
+  color: var(--badge-green-text) !important; 
 }
 
 .badge-media { 
-  background: var(--badge-yellow-bg); 
-  color: var(--badge-yellow-text); 
+  background: var(--badge-yellow-bg) !important; 
+  color: var(--badge-yellow-text) !important; 
 }
 
 .badge-bassa { 
-  background: var(--badge-red-bg); 
-  color: var(--badge-red-text); 
+  background: var(--badge-red-bg) !important; 
+  color: var(--badge-red-text) !important; 
 }
 
 .stato-pill { 
