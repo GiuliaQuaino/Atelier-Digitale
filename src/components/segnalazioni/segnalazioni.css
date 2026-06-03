@@ -1,0 +1,367 @@
+.segnalazioni-container {
+  background: #f7f8f5;
+  color: #1a2e1a;
+  flex: 1;
+}
+ 
+.segnalazioni-header {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+ 
+.segnalazioni-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+ 
+.btn-aggiungi {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a3d2b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+ 
+.btn-aggiungi:hover {
+  background: #255a3e;
+}
+ 
+.btn-aggiungi svg {
+  width: 16px;
+  height: 16px;
+}
+
+.segnalazioni-table-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+ 
+.segnalazioni-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+.segnalazioni-table thead tr {
+  background: #d6e8e0;
+}
+ 
+.segnalazioni-table thead th {
+  padding: 13px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3a3a3a;
+  letter-spacing: 0.2px;
+}
+ 
+.segnalazioni-table tbody tr {
+  border-bottom: 1px solid #f0f3ee;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+ 
+.segnalazioni-table tbody tr:last-child {
+  border-bottom: none;
+}
+ 
+.segnalazioni-table tbody tr:hover {
+  background: #f5f8f4;
+}
+ 
+.segnalazioni-table tbody tr.selected {
+  background: #edf5eb;
+}
+ 
+.segnalazioni-table tbody td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #2c3e2c;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+ 
+.badge-bassa {
+  background: #1a3d2b;
+  color: #fff;
+}
+ 
+.badge-media {
+  background: #f5e6c8;
+  color: #8a6020;
+}
+ 
+.badge-alta {
+  background: #fce8e8;
+  color: #c0392b;
+}
+ 
+.stato-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+}
+ 
+.stato-icon.completato svg circle {
+  fill: #1a3d2b;
+}
+ 
+.stato-icon.pendente svg circle {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+ 
+.segnalazione-detail {
+  padding: 16px 20px;
+  background: #fff;
+  border-top: 1px solid #eef2ec;
+  border-radius: 0 0 12px 12px;
+}
+ 
+.segnalazione-detail p {
+  font-size: 13px;
+  color: #3a4e3a;
+  line-height: 1.6;
+  margin: 4px 0 12px;
+}
+ 
+.segnalazione-detail-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8aaa8a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+ 
+.detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+ 
+.btn-chiama {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #1a3d2b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ 
+.btn-chiama:hover {
+  background: #255a3e;
+}
+ 
+.btn-crea-task {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a3d2b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ 
+.btn-crea-task:hover {
+  background: #255a3e;
+}
+ 
+.stato-icon {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.stato-icon:hover {
+  opacity: 0.7;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 25, 14, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a2e1a;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7a9a7a;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+.modal-close:hover { color: #1a2e1a; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a6a4a;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font-size: 14px;
+  color: #1a2e1a;
+  background: #f7f8f5;
+  border: 1.5px solid #dde8dd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #1a3d2b;
+  background: #fff;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btn-cancel {
+  background: #fff;
+  color: #4a6a4a;
+  border: 1.5px solid #dde8dd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.btn-cancel:hover { border-color: #1a3d2b; }
+
+.btn-submit {
+  background: #1a3d2b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-submit:hover { background: #255a3e; }
+
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #1a3d2b;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.chiamata-popup {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a3d2b;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.chiamata-number {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}

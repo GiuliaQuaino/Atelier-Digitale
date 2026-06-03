@@ -29,7 +29,6 @@
 
 .flotte-container { 
   font-family: 'Montserrat', sans-serif; 
-  padding: 1.5rem 0; 
 }
 
 .flotte-header { 
@@ -38,21 +37,24 @@
   justify-content: space-between; 
   flex-wrap: wrap; 
   gap: 12px; 
-  margin-bottom: 1.25rem; 
+  margin-bottom: 24px;
+  padding-top: 24px 
 }
 
 .flotte-title { 
-  font-size: 22px; 
-  font-weight: 500; 
-  color: #111; 
+  font-size: 24px; 
+  font-weight: 700; 
+  color: #1A1A1A; 
   margin: 0; 
+  letter-spacing: -0.05px;
 }
 
 .filter-group { 
   display: flex; 
-  gap: 8px; 
-  flex-wrap: wrap; 
+  gap: 10px; 
   align-items: center; 
+  max-width: 600px;
+  margin-bottom: 20px;
 }
 
 .filter-label { 
@@ -61,29 +63,31 @@
 }
 
 .table-wrapper { 
-  border: 0.5px solid var(--border); 
   border-radius: 12px; 
   overflow: hidden; 
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06); 
+
 }
 
 .flotte-table { 
   width: 100%; 
   border-collapse: collapse; 
   table-layout: fixed; 
+  
 }
 
 .table-th { 
-  padding: 10px 14px; 
+  padding: 13px 16px; 
   text-align: left; 
-  font-size: 12px; 
+  font-size: 13px; 
   font-weight: 500; 
-  color: #374151; 
-  border-bottom: 0.5px solid var(--border); 
+  color: #3a3a3a; 
+  border-bottom: 1px solid #f0f3ee; 
 }
 
 .table-td { 
-  padding: 12px 14px; 
-  border-bottom: 0.5px solid var(--border); 
+  padding: 13px 16px; 
+  border-bottom: 1px solid #f0f3ee; 
   vertical-align: middle; 
 }
 
@@ -92,18 +96,17 @@
 }
 
 .td-id { 
-  font-size: 12px; 
-  font-family: monospace; 
+  font-size: 14px; 
   color: #374151; 
 }
 
 .td-modello { 
-  font-size: 13px; 
-  color: #111; 
+  font-size: 14px; 
+  color: #2c3e2c; 
 }
 
 .td-km { 
-  font-size: 13px; 
+  font-size: 14px; 
   color: #374151; 
 }
 
@@ -174,13 +177,27 @@
 .form-input {
   width: 100%; 
   padding: 6px 10px; 
-  font-size: 13px;
+  font-size: 13px !important;
   border: 0.5px solid var(--border); 
   border-radius: 6px;
   background: #fff; 
   color: #111; 
   outline: none; 
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif !important; 
+
+}
+
+.form-input, .form-select, .form-textarea{
+  font-size: 13px;
+    color: #1a2e1a !important;
+    background: #fff !important;
+    border: 1.5px solid #dde8dd !important;
+    border-radius: 8px;
+    padding: 8px 12px !important;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.15s;
 }
 
 .edit-row-actions {
@@ -193,9 +210,9 @@
 
 .btn-cancel, 
 .btn-save { 
-  padding: 6px 12px; 
-  border-radius: 6px; 
-  font-size: 12px; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  font-size: 14px; 
   cursor: pointer; 
   font-weight: 500; 
 }
@@ -204,12 +221,13 @@
   border: 0.5px solid var(--border); 
   background: #fff; 
   color: #374151; 
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .btn-save { 
   border: none; 
   background: var(--pill-attivo-bg); 
-  color: var(--pill-attivo-text); 
+  color: white; 
 }
 
 .btn-save:hover { 
@@ -228,18 +246,18 @@
 }
 
 .badge-alta { 
-  background: var(--badge-green-bg); 
-  color: var(--badge-green-text); 
+  background: var(--badge-green-bg) !important; 
+  color: var(--badge-green-text) !important; 
 }
 
 .badge-media { 
-  background: var(--badge-yellow-bg); 
-  color: var(--badge-yellow-text); 
+  background: var(--badge-yellow-bg) !important; 
+  color: var(--badge-yellow-text) !important; 
 }
 
 .badge-bassa { 
-  background: var(--badge-red-bg); 
-  color: var(--badge-red-text); 
+  background: var(--badge-red-bg) !important; 
+  color: var(--badge-red-text) !important; 
 }
 
 .stato-pill { 
@@ -259,8 +277,8 @@
 }
 
 .pill-attivo { 
-  background: var(--pill-attivo-bg); 
-  color: var(--pill-attivo-text); 
+  background:#0D4335; 
+  color: white; 
 }
 
 .pill-inuso { 
@@ -309,11 +327,11 @@
   display: flex; 
   align-items: center; 
   gap: 6px; 
-  padding: 6px 12px; 
+  padding: 8px 12px; 
   border: 0.5px solid var(--border); 
   border-radius: 8px; 
   background: #fff; 
-  color: #6b7280; 
+  color: #1a2e1a; 
   font-size: 13px; 
   cursor: pointer; 
   font-weight: 400; 

@@ -1,4 +1,4 @@
-import { AlertCircle, Plus } from 'lucide-react';
+import { AlertCircle} from 'lucide-react';
 import styles from './RemindersWidget.module.css';
 
 const alertsData = [
@@ -13,9 +13,7 @@ export default function RemindersWidget() {
       
       <div className={styles.header}>
         <h2 className={styles.title}>Nuove Segnalazioni</h2>
-        <button className={styles.addButton}>
-          <Plus style={{ width: '20px', height: '20px' }} />
-        </button>
+
       </div>
 
       <div className={styles.alertList}>
