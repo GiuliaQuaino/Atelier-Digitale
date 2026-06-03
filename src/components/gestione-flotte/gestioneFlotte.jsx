@@ -149,10 +149,10 @@ function TableRow({ mezzo, isLast, isEditing, onEditClick, onCloseEdit, onDelete
 }
 
 export default function ElencoMezzi({
-  data = DEFAULT_DATA,
-  onDelete,
+  data: initialData = DEFAULT_DATA,
   title = "Elenco mezzi",
 }) {
+  const [data, setData] = useState(initialData);
   const [filterModello, setFilterModello] = useState(null);
   const [filterAutonomia, setFilterAutonomia] = useState(null);
   const [filterStato, setFilterStato] = useState(null);
@@ -172,6 +172,10 @@ export default function ElencoMezzi({
     }
     return true;
   });
+
+  const handleDelete = (mezzo) => {
+  setData((prev) => prev.filter((m) => m.id !== mezzo.id || m !== mezzo));
+};
 
   return (
     <div className="flotte-container">
@@ -213,7 +217,7 @@ export default function ElencoMezzi({
                   isEditing={editingMezzoId === mezzo.id}
                   onEditClick={(m) => setEditingMezzoId(m.id)}
                   onCloseEdit={() => setEditingMezzoId(null)}
-                  onDelete={onDelete}
+                  onDelete={handleDelete}
                 />
               ))
             )}
