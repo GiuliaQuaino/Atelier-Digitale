@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./gestioneFlotte.css";
 
 const STATO_OPTIONS = ["Attivo", "In Uso", "Non Disponibile"];
@@ -10,9 +10,9 @@ function AutonomiaBadge({ value }) {
 
 function StatoPill({ stato }) {
   const map = {
-    Attivo: { className: "pill-attivo", icon: "✓", label: "Attivo" },
-    "In Uso": { className: "pill-inuso", icon: "···", label: "In Uso" },
-    "Non Disponibile": { className: "pill-nondisp", icon: "✕", label: "Non Disponibile" },
+    Attivo: { className: "pill-attivo", label: "Attivo" },
+    "In Uso": { className: "pill-inuso", label: "In Uso" },
+    "Non Disponibile": { className: "pill-nondisp", label: "Non Disponibile" },
   };
   const { className, icon, label } = map[stato] ?? map["Non Disponibile"];
   return (
@@ -30,39 +30,18 @@ function IconButton({ onClick, danger, title, children }) {
   );
 }
 
-function FilterDropdown({ label, icon, options, value, onChange }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    function handle(e) {
-      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
-    }
-    document.addEventListener("mousedown", handle);
-    return () => document.removeEventListener("mousedown", handle);
-  }, []);
-
+function FilterDropdown({ label, options, value, onChange }) {
   return (
-    <div ref={ref} className="dropdown-wrapper">
-      <button onClick={() => setOpen((o) => !o)} className={`dropdown-trigger ${value ? "dropdown-trigger-active" : ""}`}>
-        <span>{icon}</span>{value ?? label}
-        <span className="dropdown-arrow">▾</span>
-      </button>
-
-      {open && (
-        <div className="dropdown-menu">
-          {["Tutti", ...options].map((opt) => (
-            <button
-              key={opt}
-              onClick={() => { onChange(opt === "Tutti" ? null : opt); setOpen(false); }}
-              className={`dropdown-item ${(value ?? "Tutti") === opt ? "dropdown-item-active" : ""}`}
-            >
-              {opt}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+    <select
+      value={value ?? ""}
+      onChange={(e) => onChange(e.target.value === "" ? null : e.target.value)}
+      className="form-input"
+    >
+      <option value="">{label}</option>
+      {options.map((opt) => (
+        <option key={opt} value={opt}>{opt}</option>
+      ))}
+    </select>
   );
 }
 
@@ -145,9 +124,19 @@ function TableRow({ mezzo, isLast, isEditing, onEditClick, onCloseEdit, onDelete
               title={isEditing ? "Chiudi" : "Modifica"} 
               onClick={() => isEditing ? onCloseEdit() : onEditClick(mezzo)}
             >
-              {isEditing ? "✕" : "✏️"}
+              {isEditing ? ("✕") : (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+    <path d="m15 5 4 4"/>
+  </svg>
+)}
             </IconButton>
-            <IconButton title="Elimina" danger onClick={() => onDelete?.(mezzo)}>🗑</IconButton>
+            <IconButton title="Elimina" danger onClick={() => onDelete?.(mezzo)}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <polyline points="3 6 5 6 21 6"/>
+  <path d="M19 6l-1 14H6L5 6"/>
+  <path d="M10 11v6M14 11v6"/>
+  <path d="M9 6V4h6v2"/>
+</svg></IconButton>
           </div>
         </td>
       </tr>
@@ -187,14 +176,14 @@ export default function ElencoMezzi({
   return (
     <div className="flotte-container">
       <div className="flotte-header">
-        <h2 className="flotte-title">{title}</h2>
-        <div className="filter-group">
-          <span className="filter-label">Filtra per:</span>
-          <FilterDropdown label="Modello" icon="🚗" options={modelOptions} value={filterModello} onChange={setFilterModello} />
-          <FilterDropdown label="Autonomia" icon="⚡" options={autonomiaOptions} value={filterAutonomia} onChange={setFilterAutonomia} />
-          <FilterDropdown label="Stato" icon="🔄" options={statoOptions} value={filterStato} onChange={setFilterStato} />
-        </div>
+        <h2 className="flotte-title">{title}</h2> 
       </div>
+      <div className="filter-group">
+          <span className="filter-label" style={{ minWidth: "80px" }}>Filtra per:</span>
+          <FilterDropdown label="Modello"  options={modelOptions} value={filterModello} onChange={setFilterModello} />
+          <FilterDropdown label="Autonomia" options={autonomiaOptions} value={filterAutonomia} onChange={setFilterAutonomia} />
+          <FilterDropdown label="Stato" options={statoOptions} value={filterStato} onChange={setFilterStato} />
+        </div>
 
       <div className="table-wrapper">
         <table className="flotte-table">
@@ -205,7 +194,7 @@ export default function ElencoMezzi({
           </colgroup>
           <thead>
             <tr style={{ background: "var(--header-bg)" }}>
-              {["ID", "Modello", "Km", "Autonomia", "Stato", "Edit"].map((h) => (
+              {["ID", "Modello", "Km", "Autonomia", "Stato", "Modifica"].map((h) => (
                 <th key={h} className="table-th">{h}</th>
               ))}
             </tr>
