@@ -9,6 +9,9 @@ import NoleggiChart from "../components/component-grafico-noleggio/widgetNoleggi
 import CO2Card from "../components/CO2-card/cardCO2";
 
 
+import MappaMilano from '../components/MappaMilano';
+
+
 
 const dataMag = [
 
@@ -82,7 +85,55 @@ export default function Dashboard() {
 
             </div>
 
-   
+<div style={{
+  backgroundColor: '#FFF',
+  borderRadius: '12px',
+  padding: '24px',
+  boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '15px',
+  width: '100%',
+  boxSizing: 'border-box'
+}}>
+  
+  
+  <h3 style={{ fontSize: '18px', margin: 0, fontWeight: '600', color: '#111' }}>
+    Stato delle Stazioni
+  </h3>
+
+  {/* Contenitore della Mappa */}
+  <div style={{ 
+    width: '100%', 
+    borderRadius: '8px', 
+    overflow: 'hidden',
+    border: '1px dashed #4A90E2' 
+  }}>
+
+    <MappaMilano onVeicoloClick={() => {}} />
+  </div>
+
+  
+  <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '5px' }}>
+    
+    <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#8a8fa8', fontWeight: '500' }}>
+      <span style={{ width: '10px', height: '10px', borderRadius: '3px', backgroundColor: '#4CAF50', flexShrink: 0 }} />
+      Operative
+    </span>
+
+    <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#8a8fa8', fontWeight: '500' }}>
+      <span style={{ width: '10px', height: '10px', borderRadius: '3px', backgroundColor: '#FFEB3B', flexShrink: 0 }} />
+      In Manutenzione
+    </span>
+
+    <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#8a8fa8', fontWeight: '500' }}>
+      <span style={{ width: '10px', height: '10px', borderRadius: '3px', backgroundColor: '#E14B4B', flexShrink: 0 }} />
+      Inattive
+    </span>
+
+  </div>
+
+</div>
 
    
 
