@@ -15,7 +15,6 @@ export default function Dashboard() {
   const { utente } = useAuth();
 
   const isAdmin = utente?.ruolo === "Amministratore";
-  const isTecnico = utente?.ruolo === "Tecnico";
   const isSupporto = utente?.ruolo === "Supporto";
 
   return <div>
