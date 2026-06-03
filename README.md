@@ -4,6 +4,9 @@
 - npm install recharts
 - npm install @react-google-maps/api
 
+## Come Avviare il progetto
+- npm run dev
+
 ## Panoramica del Progetto
 
 **Green Mobility** è una piattaforma di gestione flotte per servizi di noleggio veicoli elettrici (bici e auto). L'applicazione permette di monitorare veicoli, gestire manutenzioni, visualizzare statistiche e amministrare utenti 
