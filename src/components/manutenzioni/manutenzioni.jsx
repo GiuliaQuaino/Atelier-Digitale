@@ -30,6 +30,89 @@ function BadgeStato({ stato }) {
   );
 }
  
+function ModalGuasto({ onClose, onSave }) {
+  const [form, setForm] = useState({
+    idVeicolo: '',
+    modello: 'Macchina',
+    manutentore: '',
+    categoria: '',
+    note: '',
+  });
+ 
+  const set = (k, v) => setForm((p) => ({ ...p, [k]: v }));
+ 
+  const handleSubmit = () => {
+    if (!form.idVeicolo || !form.categoria || !form.manutentore) return;
+    onSave(form);
+  };
+ 
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <span className="modal-title">Segnala guasto</span>
+          <button className="modal-close" onClick={onClose}>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="2" y1="2" x2="16" y2="16" /><line x1="16" y1="2" x2="2" y2="16" />
+            </svg>
+          </button>
+        </div>
+ 
+        <div className="form-row">
+          <div className="form-group">
+            <label className="form-label">ID Veicolo</label>
+            <input className="form-input" placeholder="es. M-1A23BF" value={form.idVeicolo} onChange={(e) => set('idVeicolo', e.target.value)} />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Modello</label>
+            <select className="form-select" value={form.modello} onChange={(e) => set('modello', e.target.value)}>
+              <option>Macchina</option>
+              <option>Bici</option>
+              <option>Monopattino</option>
+            </select>
+          </div>
+        </div>
+
+            <div className="form-group">
+    <label className="form-label">Assegna a manutentore</label>
+    <select
+        className="form-select"
+        value={form.manutentore}
+        onChange={(e) => set('manutentore', e.target.value)}>
+        <option value="">— Seleziona —</option>
+        <option>Marco Rossi</option>
+        <option>Laura Bianchi</option>
+        <option>Giovanni Verdi</option>
+    </select>
+    </div>
+ 
+        <div className="form-group">
+          <label className="form-label">Categoria guasto</label>
+          <select className="form-select" value={form.categoria} onChange={(e) => set('categoria', e.target.value)}>
+            <option value="">— Seleziona —</option>
+            <option>Batteria rotta</option>
+            <option>Ruota danneggiata</option>
+            <option>Guasto motore</option>
+            <option>Freni non funzionanti</option>
+            <option>Carrozzeria danneggiata</option>
+            <option>Altro</option>
+          </select>
+        </div>
+ 
+        <div className="form-group">
+          <label className="form-label">Nota</label>
+          <textarea className="form-textarea" placeholder="Descrivi brevemente il guasto..." value={form.note} onChange={(e) => set('note', e.target.value)} />
+        </div>
+ 
+        <div className="modal-footer">
+          <button className="btn-cancel" onClick={onClose}>Annulla</button>
+          <button className="btn-submit-red" onClick={handleSubmit}>Invia segnalazione</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ModalTask({ onClose }) {
   const [form, setForm] = useState({
     idVeicolo: '',
@@ -102,6 +185,7 @@ export default function Manutenzione() {
   const [selectedId, setSelectedId] = useState(null);
   const [taskTarget, setTaskTarget] = useState(null);
   const [toast, setToast] = useState(null);
+  const [showGuasto, setShowGuasto] = useState(false);
  
   const [filtroStato, setFiltroStato] = useState('');
   const [filtroTipo, setFiltroTipo] = useState('');
@@ -125,6 +209,17 @@ export default function Manutenzione() {
     );
   };
  
+   const handleSaveGuasto = (form) => {
+    const now = new Date();
+    const data = now.toLocaleDateString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const newId = interventi.length + 1;
+    setInterventi((prev) => [
+      ...prev,
+      { ...form, id: newId, tipo: 'straordinario', tecnico: form.manutentore, stato: 'attesa', data },
+    ]);
+    setShowGuasto(false);
+    showToast('Guasto segnalato ✓');
+  };
  
 const handleTaskClose = (task) => {
   setTaskTarget(null);
@@ -278,6 +373,19 @@ const handleTaskClose = (task) => {
       </div>
  
  
+   <button className="fab-guasto" onClick={() => setShowGuasto(true)}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        Segnala guasto
+      </button>
+ 
+      {showGuasto && (
+        <ModalGuasto onClose={() => setShowGuasto(false)} onSave={handleSaveGuasto} />
+      )}
+
       {taskTarget && (
         <ModalTask intervento={taskTarget} onClose={handleTaskClose} />
       )}
