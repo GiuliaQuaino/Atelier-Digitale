@@ -1,3 +1,5 @@
-export default function Manutenzione() {
-  return <h1>Manutenzione</h1>;
+import Manutenzione from "../components/manutenzioni/manutenzioni";
+
+export default function ManutenzioneePage() {
+  return <Manutenzione />;
 }
