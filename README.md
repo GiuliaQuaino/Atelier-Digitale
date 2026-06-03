@@ -1,8 +1,7 @@
-# Green Mobility - Atelier Digitale
-## Documentazione Tecnica Completa
+# Green Mobility - Atelier Digitale - Documentazione tecnica
 ## Cosa installare prima di far partire il progetto
-- npm i
 - npm install recharts
+- npm install @react-google-maps/api
 
 ## Panoramica del Progetto
 
@@ -45,7 +44,7 @@ Credenziali:
 
 ### 2. Dashboard 
 
-Homepage dell'applicazione con panoramica generale.
+Homepage dell'applicazione con panoramica generale. Ogni utente vedrà una dashboard diversa, perchè in base hai privilegi che ha, alcuni componenti sono nascosti.
 
 **Funzionalita:**
 - Grafico che rappresenta lo stato dei mezzi (quelli disponibili, in uso, in carica e fuori servizio)
@@ -54,7 +53,6 @@ Homepage dell'applicazione con panoramica generale.
 - Grafico che mostra la CO2 risparmiata utilizzando i nostri servizi di trasporto ecologico
 - Mappa con lo stato delle stazioni, per avere una panoramica generale ma anche per permettere al supporto di dare eventuali inidcazioni su mezzi disponibili nelle vicinanze
 - Grafico andamento noleggi
-
 
 ### 3. Gestione Flotta (privilegi: amministratore, tecnico, supporto)
 
@@ -110,7 +108,9 @@ Dashboard analitica con grafici e metriche.
 Visualizzazione geografica dei veicoli.
 
 **Funzionalita:**
-- 
+- Mappa con icona che rappresenta dove si possono trovare le auto/bici (icone diverse per identificarli, verde = stato attivo, rosso = stato non attivo o non disponibile, giallo = in uso).
+- L'area azzurra rappresenta l'Area di Copertura del Servizio (o Area Operativa): è l'area in cui gli utenti possono trovare i mezzi parcheggiati e pronti all'uso. Inoltre rappresenta dove si può CHIUDERE il noleggio: Questo è il punto più importante. Un utente può prendere un'auto a San Siro e guidare fino a fuori Milano (quindi può "girare" anche fuori dall'azzurro), ma deve obbligatoriamente rimetterla dentro l'area azzurra per poter terminare il viaggio e interrompere il pagamento. Se la lascia fuori, l'app non gli permette di chiudere il noleggio (o gli fa pagare una penale)
+- Alla selezione dell'icona è possibile trovare una panoramica delle informazioni sul mezzo selezionato (ID, stato, batteria, km percorsi) 
 
 ### 8. Gestione Utenti (privilegi: amminisratore)
 
