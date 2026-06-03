@@ -1,11 +1,9 @@
 .noleggi-card {
   background: #fff;
-  border: 0.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
   max-width: 800px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  margin: 20px 0;
   width: 100%;
 }
 
@@ -17,10 +15,11 @@
 }
 
 .noleggi-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e293b;
   letter-spacing: -0.3px;
+
 }
 
 .noleggi-views {
