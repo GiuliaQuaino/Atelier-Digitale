@@ -1,7 +1,6 @@
 .segnalazioni-container {
   padding: 32px 40px;
   background: #f7f8f5;
-  min-height: 100vh;
   color: #1a2e1a;
   flex: 1;
 }
