@@ -1,5 +1,6 @@
 # Green Mobility - Atelier Digitale - Documentazione tecnica
 ## Cosa installare prima di far partire il progetto
+- npm install
 - npm install recharts
 - npm install @react-google-maps/api
 
