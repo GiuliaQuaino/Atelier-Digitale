@@ -1,0 +1,52 @@
+.gu-page {
+  background: #f4f6f5;
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+.gu-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 24px 0 0 0;
+  letter-spacing: -0.4px;
+}
+
+.gu-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+.gu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.gu-table thead tr { background: #d6e8e0; }
+.gu-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 500;
+  color: #3a3a3a;
+  font-size: 13px;
+}
+.gu-row td {
+  padding: 14px 16px;
+  border-top: 1px solid #f0f0f0;
+  vertical-align: middle;
+  color: #222;
+}
+.gu-row:hover { background: #fafafa; }
+.gu-nome { font-weight: 500; }
+.gu-id   { color: #666; font-size: 13px; }
+
+.gu-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.gu-badge.attivo      { background: #1a6651; color: #fff; }
+.gu-badge.disattivato { background: #fde8e8; color: #b84040; border: 1px solid #f5c6c6; }
