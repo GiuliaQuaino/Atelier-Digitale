@@ -6,7 +6,7 @@ const initialData = [
   { id: 1, idVeicolo: 'M-1A23BF', modello: 'Macchina', tipo: 'ordinario', categoria: 'Pulizia', tecnico: 'Marco Rossi', stato: 'completato', data: '20/04/2026', note: 'Pulizia interna ed esterna completata.' },
   { id: 2, idVeicolo: 'B-1A23BF', modello: 'Bici', tipo: 'straordinario', categoria: 'Ruota danneggiata', tecnico: 'Laura Bianchi', stato: 'corso', data: '25/04/2026', note: "Sostituzione camera d'aria ruota anteriore." },
   { id: 3, idVeicolo: 'M-2B34CD', modello: 'Macchina', tipo: 'ordinario', categoria: 'Ricarica', tecnico: 'Marco Rossi', stato: 'attesa', data: '27/04/2026', note: 'Batteria al 12%, ricarica programmata.' },
-  { id: 4, idVeicolo: 'S-3C45DE', modello: 'Monopattino', tipo: 'straordinario', categoria: 'Batteria rotta', tecnico: 'Giovanni Verdi', stato: 'attesa', data: '28/04/2026', note: 'Monopattino non si accende, probabile guasto alla batteria.' },
+  { id: 4, idVeicolo: 'S-3C45DE', modello: 'Bici', tipo: 'straordinario', categoria: 'Batteria rotta', tecnico: 'Giovanni Verdi', stato: 'attesa', data: '28/04/2026', note: 'Bici non si accende, probabile guasto alla batteria.' },
   { id: 5, idVeicolo: 'B-2B34CD', modello: 'Bici', tipo: 'ordinario', categoria: 'Controllo freni', tecnico: 'Laura Bianchi', stato: 'completato', data: '01/05/2026', note: 'Freni regolati e testati.' },
   { id: 6, idVeicolo: 'M-3C45DE', modello: 'Macchina', tipo: 'straordinario', categoria: 'Guasto motore', tecnico: 'Marco Rossi', stato: 'corso', data: '02/05/2026', note: 'Spia motore accesa, veicolo in officina.' },
 ];
@@ -68,7 +68,6 @@ function ModalGuasto({ onClose, onSave }) {
             <select className="form-select" value={form.modello} onChange={(e) => set('modello', e.target.value)}>
               <option>Macchina</option>
               <option>Bici</option>
-              <option>Monopattino</option>
             </select>
           </div>
         </div>
@@ -146,7 +145,6 @@ function ModalTask({ onClose }) {
             <select className="form-select" value={form.modello} onChange={(e) => set('modello', e.target.value)}>
               <option>Macchina</option>
               <option>Bici</option>
-              <option>Monopattino</option>
             </select>
           </div>
         </div>
@@ -292,7 +290,6 @@ const handleTaskClose = (task) => {
           <option value="">Tutti i modelli</option>
           <option>Macchina</option>
           <option>Bici</option>
-          <option>Monopattino</option>
         </select>
 
         <select className="filtro-select" value={filtroTecnico} onChange={(e) => setFiltroTecnico(e.target.value)}>
