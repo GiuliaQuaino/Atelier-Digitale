@@ -1,0 +1,90 @@
+.flotta-widget {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flotta-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.flotta-stats {
+  display: flex;
+  align-items: center;
+}
+
+.flotta-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.flotta-num {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.flotta-num.green { color: #2ecc71; }
+.flotta-num.blue  { color: #3498db; }
+.flotta-num.red   { color: #e74c3c; }
+
+.flotta-label {
+  font-size: 11px;
+  color: #8a8fa8;
+  text-align: center;
+}
+
+.flotta-divider {
+  width: 1px;
+  height: 40px;
+  background: #e8eaf0;
+}
+
+.flotta-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 99px;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.flotta-bar-segment {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.green-bg { background: #2ecc71; }
+.blue-bg  { background: #3498db; }
+.red-bg   { background: #e74c3c; }
+
+.flotta-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #8a8fa8;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}

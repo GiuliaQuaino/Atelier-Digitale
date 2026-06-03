@@ -1,0 +1,92 @@
+.guasti-widget {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.guasti-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.guasti-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.guasti-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.guasti-num {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.guasti-num.red    { color: #e74c3c; }
+.guasti-num.orange { color: #f39c12; }
+.guasti-num.green  { color: #2ecc71; }
+
+.guasti-label {
+  font-size: 11px;
+  color: #8a8fa8;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.guasti-divider {
+  width: 1px;
+  height: 40px;
+  background: #e8eaf0;
+}
+
+.guasti-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 99px;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.guasti-bar-segment {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.red-bg    { background: #e74c3c; }
+.orange-bg { background: #f39c12; }
+.green-bg  { background: #2ecc71; }
+
+.guasti-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #8a8fa8;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}

@@ -10,7 +10,7 @@
   gap: 24px;
 }
 
-/* TITLE */
+
 
 .statistics__box h3 {
   font-size: 20px;
@@ -18,7 +18,7 @@
   color: #111827;
 }
 
-/* NUMBERS SECTION */
+
 
 .statistics__numbers {
   display: flex;
@@ -62,7 +62,7 @@
   color: #3b82f6;
 }
 
-/* PROGRESS BAR */
+
 
 .statistics__progress {
   display: flex;
@@ -73,13 +73,12 @@
   background: #f3f4f6;
 }
 
-/* SEGMENTS */
 
 .statistics__progress div {
   flex: 1;
 }
 
-/* BACKGROUND COLORS */
+
 
 .red-bg {
   background: #ef4444;
@@ -97,7 +96,7 @@
   background: #3b82f6;
 }
 
-/* RESPONSIVE */
+
 
 @media screen and (max-width: 768px) {
   .statistics__numbers {
