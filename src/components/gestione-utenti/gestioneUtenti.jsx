@@ -74,7 +74,10 @@ export default function Gestioneutenti() {
       <h1 className="gu-heading">Gestione Utenti</h1>
         <div className="gu-toolbar">
         <button className="gu-btn-new" onClick={() => setShowNew(true)}>
-          + Nuovo Utente
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="8" y1="2" x2="8" y2="14" /><line x1="2" y1="8" x2="14" y2="8" />
+            </svg>
+          Nuovo Utente
         </button>
       </div>
       <div className="gu-card">
@@ -88,9 +91,8 @@ export default function Gestioneutenti() {
               <th>Modifica</th>
             </tr>
           </thead>
-          <tbody>
             {users.map((u) => (
-                <>
+                <tbody key={u.id}>
               <tr key={u.id} className="gu-row">
                 <td className="gu-nome">{u.nome}</td>
                 <td className="gu-id">{u.id}</td>
@@ -137,9 +139,8 @@ export default function Gestioneutenti() {
                     </td>
                   </tr>
                 )}
-              </>
+              </tbody>
             ))}
-          </tbody>
         </table>
       </div>
       {showNew && (

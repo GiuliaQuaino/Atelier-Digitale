@@ -4,11 +4,11 @@
 }
 
 .gu-heading {
-  font-size: 1.6rem;
+  font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
   margin: 24px 0 0 0;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.5px;
 }
 
 .gu-card {
@@ -96,7 +96,7 @@
 .gu-stato-select.disattivato { background: #fde8e8; color: #b84040; border-color: #f5c6c6; }
  
 .gu-btn-save {
-  background: #1a6651;
+  background: #105D49;
   color: #fff;
   border: none;
   border-radius: 7px;
@@ -106,7 +106,7 @@
   cursor: pointer;
   transition: background 0.15s;
 }
-.gu-btn-save:hover { background: #155645; }
+.gu-btn-save:hover { background: #0D4335; }
  
 .gu-btn-cancel {
   background: #f0f0f0;
@@ -121,14 +121,91 @@
 .gu-btn-cancel:hover { background: #e0e0e0; }
  
 .gu-btn-new {
+  display: flex;
+  align-items: center;
   background: #1a6651;
+  gap: 6px;
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.2s;
 }
-.gu-btn-new:hover { background: #155645; }
+.gu-btn-new:hover { background: #105D49; }
+
+.gu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: gu-fade-in 0.15s ease;
+}
+@keyframes gu-fade-in { from { opacity: 0 } to { opacity: 1 } }
+
+.gu-modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 380px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  animation: gu-slide-up 0.18s ease;
+}
+@keyframes gu-slide-up {
+  from { opacity: 0; transform: translateY(16px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+.gu-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.gu-modal-title { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+.gu-modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: background 0.12s;
+}
+.gu-modal-close:hover { background: #f0f0f0; color: #333; }
+
+.gu-modal-body {
+  padding:20px ;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gu-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+}
+
+.gu-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 20px 18px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.gu-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
