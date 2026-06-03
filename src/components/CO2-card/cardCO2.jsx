@@ -1,14 +1,14 @@
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import "./cardCO2.css";
 
-export default function CO2Card({ value, change, period, data, positive }) {
+export default function CO2Card({ value, change, period, data, positive, title }) {
   const arrow   = positive ? "↑" : "↓";
 
   return (
     <div className="card">
       <div className="left">
         <div className="header">
-          <span>CO2 Risparmiata</span>
+          <span>{title}</span>
         </div>
         <div className="value">{value}</div>
         <span className="badge" style={{ background: "#234a80"}}>
