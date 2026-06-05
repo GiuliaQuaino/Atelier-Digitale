@@ -3,14 +3,14 @@ import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import styles from './RentStatusWidget.module.css';
 
 const data = [
-  { name: 'Macchina', value: 38.5, color: '#56ab83', trend: 'up', percentage: '38,5%' },
-  { name: 'Bici', value: 27.0, color: '#f7e9c2', trend: 'down', percentage: '27%' },
+  { name: 'Bici', value: 38.5, color: '#56ab83', trend: 'up', percentage: '38,5%' },
+  { name: 'Macchina', value: 27.0, color: '#f7e9c2', trend: 'down', percentage: '27%' },
  
 ];
 
 const chartData = [
-  { name: 'Macchina', value: 38.5, color: '#56ab83' },
-  { name: 'Bici', value: 24.5, color: '#f7e9c2' },
+  { name: 'Bici', value: 38.5, color: '#56ab83' },
+  { name: 'Machina', value: 24.5, color: '#f7e9c2' },
 
 ];
 
